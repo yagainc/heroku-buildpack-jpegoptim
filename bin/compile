@@ -12,6 +12,10 @@ indent() {
   sed 's/^/       /'
 }
 
+arrow() {
+  sed -u 's/^/-----> /'
+}
+
 BUILD_DIR="$1"
 CACHE_DIR="$2"
 ENV_FILE=$3
