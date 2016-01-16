@@ -72,12 +72,12 @@ else
 
     cd "$LIBRARY-RELEASE.$VERSION"
 
-    ./configure | indent
+    ./configure --prefix="$INSTALL_PATH" | indent
     make | indent
-    chmod +x jpegoptim
+    make install | indent
 
     echo "Caching results for future builds" | indent
-    cp jpegoptim "$CACHE_PATH"
+    cp -R "$INSTALL_PATH" "$CACHE_PATH"
     echo "$VERSION" > "$CACHE_VERSION"
 fi
 
