@@ -1,30 +1,22 @@
 Heroku Buildpack: Jpegoptim
 =======================
 
-This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for using [jpegoptim](https://github.com/tjko/jpegoptim) in your application.  
+This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for using [jpegoptim](https://github.com/tjko/jpegoptim) in your application.
 
 It is designed to be used with [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi) to combine it with the appropriate real buildpack for your app.
 
-This is based on http://github.com/jayzes/heroku-buildpack-ffmpeg, which was in turn based on https://github.com/shunjikonishi/heroku-buildpack-ffmpeg
+Or even heroku added built-in [multi buildpack support](https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app) .
 
 Usage
 -----
 Add a `.buildpacks` file to the root of your repo that contains this buildpack URL and your real buildpack URL:
 
-    https://github.com/jayzes/heroku-buildpack-jpegoptim
+    https://github.com/yagainc/heroku-buildpack-jpegoptim
     https://github.com/heroku/heroku-buildpack-ruby
 
-Then create an application using the multi buildpack:
+Or
 
-    $ heroku create --buildpack https://github.com/ddollar/heroku-buildpack-multi
-
-If you want to add it to an existing application run:
-
-    $ heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi
-
-And then push the changes to Heroku to being the installation:
-
-    $ git push heroku master
+    heroku buildpacks:add https://github.com/yagainc/heroku-buildpack-jpegoptim
 
 You can verify that everything is properly installed by running the following command:
 
