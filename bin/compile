@@ -64,7 +64,7 @@ if [ "$CACHED_VERSION" = "$VERSION" ]; then
 else
     echo "Compiling from sources" | arrow
 
-    DOWNLOAD_URL="https://github.com/tjko/jpegoptim/archive/v$VERSION.tar.gz"
+    DOWNLOAD_URL="https://github.com/tjko/jpegoptim/archive/RELEASE.$VERSION.tar.gz"
 
     echo "DOWNLOAD_URL = $DOWNLOAD_URL" | indent
 
